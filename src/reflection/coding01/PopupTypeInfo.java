@@ -1,4 +1,4 @@
-package reflection;
+package reflection.coding01;
 
 public class PopupTypeInfo {
 	private boolean isPrimitive;

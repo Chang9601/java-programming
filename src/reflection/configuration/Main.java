@@ -1,8 +1,10 @@
-package reflection;
+package reflection.configuration;
 
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+
+import reflection.server.Server;
 
 public class Main {
 	public static void main(String[] args) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException {

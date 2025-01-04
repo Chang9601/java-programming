@@ -1,4 +1,4 @@
-package reflection;
+package reflection.exercise;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ public class ClassExercise {
 		Map<String, Integer> map = new HashMap<>();
 		Class<?> mapClass = map.getClass();
 		
-		Class<?> squareClass = Class.forName("reflection.Exercise$Square");
+		Class<?> squareClass = Class.forName("reflection.exercise.ClassExercise$Square");
 		
 		printClassInformation(stringClass, mapClass, squareClass);
 		
@@ -28,9 +28,7 @@ public class ClassExercise {
 	private static void printClassInformation(Class<?> ...classes) {
 		for (Class<?> clazz: classes) {
 			System.out.println(String.format("클래스 이름: %s, 클래스 패키지 이름: %s", clazz.getSimpleName(), clazz.getPackageName()));
-			
-			System.out.println(clazz.getTypeName());
-			
+						
 			Class<?>[] implementedInterfaces = clazz.getInterfaces();
 			
 			for (Class<?> implementedInterface: implementedInterfaces) {

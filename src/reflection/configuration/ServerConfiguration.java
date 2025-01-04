@@ -1,4 +1,4 @@
-package reflection;
+package reflection.configuration;
 
 import java.net.InetSocketAddress;
 

@@ -1,9 +1,11 @@
-package reflection;
+package reflection.server;
 
 import java.io.IOException;
 import java.io.OutputStream;
 
 import com.sun.net.httpserver.HttpServer;
+
+import reflection.configuration.ServerConfiguration;
 
 public class Server {
 	public void startServer() throws IOException {
@@ -20,7 +22,9 @@ public class Server {
 			responseBody.close();
 		});
 		
-		System.out.println(String.format("주소 %s:%d에서 서버 시작", ServerConfiguration.getInstance().getServerAddress().getHostName(), ServerConfiguration.getInstance().getServerAddress().getPort()));
+		System.out.println(String.format("주소 %s:%d에서 서버 시작", 
+				ServerConfiguration.getInstance().getServerAddress().getHostName(),
+				ServerConfiguration.getInstance().getServerAddress().getPort()));
 		
 		httpServer.start();
 	}

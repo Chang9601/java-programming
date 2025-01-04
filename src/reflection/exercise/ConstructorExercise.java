@@ -1,4 +1,4 @@
-package reflection;
+package reflection.exercise;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -10,7 +10,6 @@ public class ConstructorExercise {
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		printConstructorData(Person.class);
 		printConstructorData(Address.class);
-		
 		
 		Address address = createInstanceWithArguments(Address.class, "서울 종로구 효자로", 12);
 		Person person = createInstanceWithArguments(Person.class, address, "란다우", 20);
