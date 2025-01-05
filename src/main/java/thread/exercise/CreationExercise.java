@@ -1,14 +1,14 @@
-package thread;
+package thread.exercise;
 
-public class Creation {
+public class CreationExercise {
 	public static void main(String[] args) throws InterruptedException {
-//		Thread thread = new Thread(new Runnable() {	
-//			@Override
-//			public void run() {
-//				System.out.println("스레드: " + Thread.currentThread().getName());
-//				System.out.println("우선순위: " + Thread.currentThread().getPriority());
-//			}
-//		});
+		//Thread thread = new Thread(new Runnable() {	
+		//	@Override
+		//	public void run() {
+		//		System.out.println("스레드: " + Thread.currentThread().getName());
+		//		System.out.println("우선순위: " + Thread.currentThread().getPriority());
+		//	}
+		//});
 		
 		Thread thread = new FooThread();
 		

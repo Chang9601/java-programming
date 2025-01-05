@@ -7,8 +7,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-import javax.management.RuntimeErrorException;
-
 import reflection.data.GameConfiguration;
 import reflection.data.UserInterfaceConfiguration;
 
@@ -23,7 +21,6 @@ public class Main {
 		System.out.println(gameConfiguration);
 		System.out.println(userInterfaceConfiguration);
 	}
-	
 	
 	public static <T> T createConfigurationObject(Class<T> clazz, Path path) throws IOException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		Scanner scanner = new Scanner(path);
