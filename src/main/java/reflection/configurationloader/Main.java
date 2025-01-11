@@ -1,6 +1,7 @@
 package reflection.configurationloader;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -48,12 +49,29 @@ public class Main {
 			
 			field.setAccessible(true);
 			
-			Object parsedValue = parseValue(field.getType(), value);
+			Object parsedValue;
 			
+			if (field.getType().isArray()) {
+				parsedValue = parseArray(field.getType().getComponentType(), value);
+			} else {
+				parsedValue = parseValue(field.getType(), value);
+			}
+
 			field.set(configurationInstance, parsedValue);
 		}
 		
 		return configurationInstance;
+	}
+	
+	private static Object parseArray(Class<?> type, String value) {
+		String[] values = value.split(",");
+		Object object = Array.newInstance(type, values.length);
+		
+		for (int i = 0; i < values.length; i++) {
+			Array.set(object, i, parseValue(type, values[i]));
+		}
+		
+		return object;
 	}
 	
 	private static Object parseValue(Class<?> type, String value) {
